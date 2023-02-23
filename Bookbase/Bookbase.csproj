@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E4B33C78-217E-4627-A4FF-9AE5B1EB8B13}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bookbase</RootNamespace>
+    <AssemblyName>Bookbase</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Id3.Net, Version=0.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ID3.0.6.0\lib\net40\Id3.Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JetBrains.Annotations, Version=2018.3.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.2018.3.0\lib\net20\JetBrains.Annotations.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="authorclass.cs" />
+    <Compile Include="dbutil.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormArticleList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormArticleList.Designer.cs">
+      <DependentUpon>FormArticleList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBookList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBookList.Designer.cs">
+      <DependentUpon>FormBookList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDelete.Designer.cs">
+      <DependentUpon>FormDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDoArticle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDoArticle.Designer.cs">
+      <DependentUpon>FormDoArticle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDoAuthor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDoAuthor.Designer.cs">
+      <DependentUpon>FormDoAuthor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDoBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDoBook.Designer.cs">
+      <DependentUpon>FormDoBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDoJournal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDoJournal.Designer.cs">
+      <DependentUpon>FormDoJournal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDoPublisher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDoPublisher.Designer.cs">
+      <DependentUpon>FormDoPublisher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFindAuthor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFindAuthor.Designer.cs">
+      <DependentUpon>FormFindAuthor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFindPublisher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFindPublisher.Designer.cs">
+      <DependentUpon>FormFindPublisher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFindTitle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFindTitle.Designer.cs">
+      <DependentUpon>FormFindTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListmaker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListmaker.Designer.cs">
+      <DependentUpon>FormListmaker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLook.Designer.cs">
+      <DependentUpon>FormLook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMisparse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMisparse.Designer.cs">
+      <DependentUpon>FormMisparse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModify.Designer.cs">
+      <DependentUpon>FormModify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormModifyAuthor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModifyAuthor.Designer.cs">
+      <DependentUpon>FormModifyAuthor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormModifyPublisher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModifyPublisher.Designer.cs">
+      <DependentUpon>FormModifyPublisher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNewBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNewBook.Designer.cs">
+      <DependentUpon>FormNewBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNewShorts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNewShorts.Designer.cs">
+      <DependentUpon>FormNewShorts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSubject.Designer.cs">
+      <DependentUpon>FormSubject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hbookclass.cs" />
+    <Compile Include="librarydb.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="util.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormArticleList.resx">
+      <DependentUpon>FormArticleList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBookList.resx">
+      <DependentUpon>FormBookList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDelete.resx">
+      <DependentUpon>FormDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDoArticle.resx">
+      <DependentUpon>FormDoArticle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDoAuthor.resx">
+      <DependentUpon>FormDoAuthor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDoBook.resx">
+      <DependentUpon>FormDoBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDoJournal.resx">
+      <DependentUpon>FormDoJournal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDoPublisher.resx">
+      <DependentUpon>FormDoPublisher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFindAuthor.resx">
+      <DependentUpon>FormFindAuthor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFindPublisher.resx">
+      <DependentUpon>FormFindPublisher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFindTitle.resx">
+      <DependentUpon>FormFindTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListmaker.resx">
+      <DependentUpon>FormListmaker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLook.resx">
+      <DependentUpon>FormLook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMisparse.resx">
+      <DependentUpon>FormMisparse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModify.resx">
+      <DependentUpon>FormModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModifyAuthor.resx">
+      <DependentUpon>FormModifyAuthor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModifyPublisher.resx">
+      <DependentUpon>FormModifyPublisher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNewBook.resx">
+      <DependentUpon>FormNewBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNewShorts.resx">
+      <DependentUpon>FormNewShorts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSubject.resx">
+      <DependentUpon>FormSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
