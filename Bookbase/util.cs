@@ -186,13 +186,21 @@ namespace Bookbase
 
             Console.WriteLine("# records found (Libris) = " + j["records"].ToString());
 
+            string yearrex = @"(.+), \d{4}";
+
             foreach (JObject jrecord in j["list"])
             {
                 Console.WriteLine("ISBN = " + jrecord["isbn"].ToString() + ", title = " + jrecord["title"].ToString());
                 if (jrecord.ContainsKey("title"))
                     tit = jrecord["title"].ToString().Replace(";", ".,");
                 if (jrecord.ContainsKey("creator"))
+                {
                     au = jrecord["creator"].ToString();
+                    foreach (Match m in Regex.Matches(au,yearrex))
+                    {
+                        au = m.Groups[1].Value;
+                    }
+                }
                 if (jrecord.ContainsKey("publisher"))
                     foreach (JValue ja in jrecord["publisher"])
                 {
@@ -258,7 +266,11 @@ namespace Bookbase
                 Console.WriteLine("ISBN = " + jrecord["isbn"].ToString() + ", title = " + jrecord["title"].ToString());
                 tit = jrecord["title"].ToString().Replace(";",".,");
                 yt = jrecord.ContainsKey("publish_year") ? jrecord["publish_year"][0].ToString() : "0";
+                if (yt.Length > 2)
+                    yt = yt.Substring(yt.Length - 2);
                 yf = jrecord.ContainsKey("first_publish_year") ? jrecord["publish_year"][0].ToString() : yt;
+                if (yf.Length > 2)
+                    yf = yt.Substring(yf.Length - 2);
                 foreach (JValue ja in jrecord["author_name"])
                 {
                     Console.WriteLine("Author: " + ja.ToString());

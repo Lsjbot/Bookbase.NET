@@ -47,6 +47,7 @@ namespace Bookbase
             else
             {
                 TB_isbn.Focus();
+                this.ActiveControl = TB_isbn;
             }
 
             populate_subjectlist();
