@@ -79,8 +79,10 @@ namespace Bookbase
             {
                 ls.Add(ab.AuthorAuthor.Name);
             }
-            sb.Append(util.format_authorlist(ls) + ". ");
-            sb.Append(" (" + util.addcentury(bb.YearThis) + "). ");
+            string bookauthor = util.format_authorlist(ls) + ". ";
+            sb.Append(bookauthor);
+            string yearstring = " (" + util.addcentury(bb.YearThis) + "). ";
+            sb.Append(yearstring);
             sb.Append(bb.Title + ". ");
             sb.Append(bb.PublisherPublisher.Name+".");
             string bookref = sb.ToString();
@@ -89,11 +91,12 @@ namespace Bookbase
             foreach (ChapterSong cs in qc)
             {
                 var qac = (from c in db.AuthorChapter where c.ChapterSong == cs.Id select c);
+                List<string> lsc = new List<string>();
                 foreach (AuthorChapter ac in qac)
                 {
-                    sb.Append(ac.AuthorAuthor.Name+", ");
+                    lsc.Add(ac.AuthorAuthor.Name);
                 }
-                string s = util.format_authorlist(ls) + ". " + cs.Title + " In: "+bookref;
+                string s = util.format_authorlist(lsc) + ". " + yearstring + cs.Title + " In: "+bookauthor+bb.Title+". "+ bb.PublisherPublisher.Name + ".";
                 sb.Append("\n"+s);
             }
 
